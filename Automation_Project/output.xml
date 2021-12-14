@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.8.10 on linux)" generated="20211214 16:28:38.903" rpa="false" schemaversion="2">
+<suite id="s1" name="Main" source="/home/nurarif/PycharmProjects/Demo/Automation_Project/main.robot">
+<test id="s1-t1" name="Open Deriv">
+<kw name="Test API" library="testing">
+<arg>${my_email}</arg>
+<arg>${my_pw}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://app.deriv.com/account/api-token</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211214 16:28:38.988" level="INFO">Opening browser 'chrome' to base url 'https://app.deriv.com/account/api-token'.</msg>
+<status status="PASS" starttime="20211214 16:28:38.988" endtime="20211214 16:28:42.784"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>dt_core_header_acc-info-preloader</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20211214 16:28:42.784" endtime="20211214 16:28:48.099"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211214 16:28:48.100" endtime="20211214 16:28:48.114"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:48.115" level="INFO">Typing text 'nurarif+1@besquare.com.my' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20211214 16:28:48.114" endtime="20211214 16:28:48.171"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pw_field}</arg>
+<arg>${pw}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:48.172" level="INFO">Typing text 'Abcd1234' into text field '//*[@type="password"]'.</msg>
+<status status="PASS" starttime="20211214 16:28:48.172" endtime="20211214 16:28:48.221"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_outh_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:48.221" level="INFO">Clicking element '//*[text()="Log in"]'.</msg>
+<status status="PASS" starttime="20211214 16:28:48.221" endtime="20211214 16:28:51.854"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${checkbox}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211214 16:28:51.854" endtime="20211214 16:28:52.924"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:52.924" level="INFO">Clicking element '//*[@id="app_contents"]/div/div/div/div[2]/section/div/form/div/div[1]/div[2]/div/div/div/div[1]/label/span[1]'.</msg>
+<status status="PASS" starttime="20211214 16:28:52.924" endtime="20211214 16:28:52.978"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${token_name}</arg>
+<arg>test1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:52.978" level="INFO">Typing text 'test1' into text field 'name=token_name'.</msg>
+<status status="PASS" starttime="20211214 16:28:52.978" endtime="20211214 16:28:53.105"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${create}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:53.105" level="INFO">Clicking element '//*[@id="app_contents"]/div/div/div/div[2]/section/div/form/div/div[2]/div[2]/div/div/div/button'.</msg>
+<status status="PASS" starttime="20211214 16:28:53.105" endtime="20211214 16:28:53.163"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${delete}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211214 16:28:53.163" endtime="20211214 16:28:53.172"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${delete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:53.173" level="INFO">Clicking element '//*[@class="dc-btn dc-btn--secondary dc-btn__small"]'.</msg>
+<status status="PASS" starttime="20211214 16:28:53.172" endtime="20211214 16:28:53.206"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${yes}</arg>
+<arg>8</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211214 16:28:53.206" endtime="20211214 16:28:53.213"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${yes}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211214 16:28:53.214" level="INFO">Clicking element '//*[@id="app_contents"]/div/div/div/div[2]/section/div/form/div/div[3]/div[2]/div/div/div[1]/div[3]/div[2]/div/button[2]'.</msg>
+<status status="PASS" starttime="20211214 16:28:53.214" endtime="20211214 16:28:53.274"/>
+</kw>
+<status status="PASS" starttime="20211214 16:28:38.987" endtime="20211214 16:28:53.274"/>
+</kw>
+<status status="PASS" starttime="20211214 16:28:38.987" endtime="20211214 16:28:53.274"/>
+</test>
+<status status="PASS" starttime="20211214 16:28:38.904" endtime="20211214 16:28:53.275"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
