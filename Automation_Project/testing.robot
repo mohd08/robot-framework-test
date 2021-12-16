@@ -21,4 +21,24 @@ Test API
     wait until page contains element    ${yes}     8
     click element   ${yes}
 
+Account Deactivation
+    [arguments]     ${email}    ${pw}
+    open browser    https://app.deriv.com/account/deactivate-account    browser=chrome
+    wait until page does not contain element    dt_core_header_acc-info-preloader   60
+    wait until page contains element    ${email_field}  30
+    input text  ${email_field}   ${email}
+    input text  ${pw_field}   ${pw}
+    click element   ${login_outh_button}
+
+    wait until page contains element    ${deactivate_btn}   30
+    click element   ${deactivate_btn}
+    wait until page contains element    ${reason1}  30
+    click element   ${reason1}
+    click element   ${reason2}
+    input text  ${comment_field}    Overall you have a good platform but I prefer to choose other trading platform. Thank you for your services.
+    click element   ${cont_btn}
+    wait until page contains element    ${popup_warning}   30
+    click element   ${deactivate}
+
+
 
